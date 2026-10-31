@@ -168,10 +168,10 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
             Selamat datang di Sistem Kasir & Gudang,
           </div>
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2 mt-0.5">
-            TOKO SNACK BERKAH NUSA <span className="text-xl">👋</span>
+            TOKO ADI MULYA <span className="text-xl">🌾</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Monitoring penjualan kasir, persediaan gudang, dan kelola foto produk secara *real-time*.
+            Monitoring penjualan kasir, persediaan sembako & pakan ternak, dan transaksi secara *real-time*.
           </p>
         </div>
 
@@ -374,7 +374,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
             <div>
               <h3 className="font-bold text-base text-slate-900 flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-blue-600" />
-                <span>Tren Penjualan Toko Snack Berkah Nusa</span>
+                <span>Tren Penjualan Toko ADI MULYA</span>
               </h3>
               <p className="text-xs text-slate-400 mt-0.5">
                 Fluktuasi omset penjualan per hari
@@ -513,7 +513,7 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({
               <span>Produk Terlaris & Sisa Stok Gudang</span>
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
-              Sinkron langsung dengan stok fisik di Gudang Toko Snack Berkah Nusa
+              Sinkron langsung dengan stok fisik di Gudang Toko ADI MULYA
             </p>
           </div>
 

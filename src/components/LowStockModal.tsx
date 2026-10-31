@@ -48,7 +48,7 @@ export const LowStockModal: React.FC<LowStockModalProps> = ({
             <div className="flex items-center justify-between">
               <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
                 <Layers className="w-4 h-4 text-red-500" />
-                <span>Stok Bal-balan Menipis ({lowBulkStocks.length} Varian)</span>
+                <span>Stok Karung & Sak Menipis ({lowBulkStocks.length} Varian)</span>
               </h4>
               <button
                 onClick={() => {
@@ -57,7 +57,7 @@ export const LowStockModal: React.FC<LowStockModalProps> = ({
                 }}
                 className="text-[11px] text-amber-600 font-semibold hover:underline"
               >
-                Lihat Semua Bal &rarr;
+                Lihat Semua Karung & Sak &rarr;
               </button>
             </div>
 

@@ -60,11 +60,12 @@ export const PackagedStockView: React.FC<PackagedStockViewProps> = ({
 
   const packageTypeFilters = [
     { id: 'ALL', label: 'Semua Kemasan' },
-    { id: 'KEMASAN_10K', label: 'Kemasan 10 Ribu' },
-    { id: 'KEMASAN_5K', label: 'Kemasan 5 Ribu' },
-    { id: 'KEMASAN_500G', label: 'Setengah Kilo (500g)' },
-    { id: 'KEMASAN_250G', label: '250 Gram' },
-    { id: 'BAL', label: 'Bal Utuh' },
+    { id: 'SAK_50KG', label: 'Sak 50kg' },
+    { id: 'PACK_5KG', label: 'Pack 5kg' },
+    { id: 'ECERAN_1KG', label: 'Eceran 1kg' },
+    { id: 'LITER', label: 'Literan / Botol' },
+    { id: 'PCS', label: 'Satuan Pcs' },
+    { id: 'BAL', label: 'Karung / Bal' },
   ];
 
   const filteredProducts = products.filter((p) => {
@@ -101,7 +102,12 @@ export const PackagedStockView: React.FC<PackagedStockViewProps> = ({
     if (!bulk) return;
 
     let packageLabel = 'Kemasan Khusus';
-    if (newPackageType === 'KEMASAN_10K') packageLabel = 'Kemasan 10 Ribuan';
+    if (newPackageType === 'SAK_50KG') packageLabel = 'Sak Utuh 50kg';
+    else if (newPackageType === 'PACK_5KG') packageLabel = 'Pack 5 Kg';
+    else if (newPackageType === 'ECERAN_1KG') packageLabel = 'Eceran 1 Kg';
+    else if (newPackageType === 'LITER') packageLabel = 'Botol / Literan';
+    else if (newPackageType === 'PCS') packageLabel = '1 Pcs Unit';
+    else if (newPackageType === 'KEMASAN_10K') packageLabel = 'Kemasan 10 Ribuan';
     else if (newPackageType === 'KEMASAN_5K') packageLabel = 'Kemasan 5 Ribuan';
     else if (newPackageType === 'KEMASAN_500G') packageLabel = 'Kemasan 500 Gram';
     else if (newPackageType === 'KEMASAN_250G') packageLabel = 'Kemasan 250 Gram';

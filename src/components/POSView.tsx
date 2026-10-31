@@ -68,8 +68,8 @@ export const POSView: React.FC<POSViewProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Category filter tabs matching mockup
-  const categoryTabs = ['Semua', 'Minuman', 'Makanan', 'Snack', 'Lainnya'];
+  // Category filter tabs matching ADI MULYA domain
+  const categoryTabs = ['Semua', 'Sembako', 'Pakan Ternak', 'Aksesori', 'Lainnya'];
 
   // Filter products based on search and category
   const filteredProducts = products.filter((p) => {
@@ -81,7 +81,7 @@ export const POSView: React.FC<POSViewProps> = ({
 
     if (selectedCategory === 'Semua') return matchesSearch;
     if (selectedCategory === 'Lainnya') {
-      return matchesSearch && !['Minuman', 'Makanan', 'Snack'].includes(p.category || '');
+      return matchesSearch && !['Sembako', 'Pakan Ternak', 'Aksesori'].includes(p.category || '');
     }
     return matchesSearch && p.category === selectedCategory;
   });
@@ -233,7 +233,7 @@ export const POSView: React.FC<POSViewProps> = ({
           }`}
         >
           <Package className="w-3.5 h-3.5" />
-          <span>Katalog Menu ({filteredProducts.length})</span>
+          <span>Katalog Produk ({filteredProducts.length})</span>
         </button>
 
         <button
@@ -268,7 +268,7 @@ export const POSView: React.FC<POSViewProps> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Cari menu atau scan barcode..."
+                placeholder="Cari sembako, pakan ternak, barcode..."
                 className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200/60 rounded-2xl text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-slate-900 focus:bg-white font-medium text-slate-900 transition-all"
               />
             </div>

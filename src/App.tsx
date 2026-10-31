@@ -37,30 +37,40 @@ import { StoreSettingsView } from './components/StoreSettingsView';
 import { syncToFirebase } from './lib/firebase-sync';
 
 export default function App() {
-  // LocalStorage persistence helpers
+  // LocalStorage persistence helpers with ADI MULYA namespace
   const [bulkStocks, setBulkStocks] = useState<BulkStockItem[]>(() => {
-    const saved = localStorage.getItem('snack_bulk_stocks');
+    const saved = localStorage.getItem('adimulya_bulk_stocks');
     return saved ? JSON.parse(saved) : INITIAL_BULK_STOCK;
   });
 
   const [packagedProducts, setPackagedProducts] = useState<PackagedProduct[]>(() => {
-    const saved = localStorage.getItem('snack_packaged_products');
+    const saved = localStorage.getItem('adimulya_packaged_products');
     return saved ? JSON.parse(saved) : INITIAL_PACKAGED_PRODUCTS;
   });
 
   const [transactions, setTransactions] = useState<Transaction[]>(() => {
-    const saved = localStorage.getItem('snack_transactions');
+    const saved = localStorage.getItem('adimulya_transactions');
     return saved ? JSON.parse(saved) : INITIAL_TRANSACTIONS;
   });
 
   const [repackHistory, setRepackHistory] = useState<RepackRecord[]>(() => {
-    const saved = localStorage.getItem('snack_repack_history');
+    const saved = localStorage.getItem('adimulya_repack_history');
     return saved ? JSON.parse(saved) : INITIAL_REPACK_HISTORY;
   });
 
   const [settings, setSettings] = useState<StoreSettings>(() => {
-    const saved = localStorage.getItem('snack_settings');
-    return saved ? JSON.parse(saved) : INITIAL_SETTINGS;
+    const saved = localStorage.getItem('adimulya_settings');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.storeName && !parsed.storeName.includes('BERKAH NUSA')) {
+          return parsed;
+        }
+      } catch {
+        // Fallback
+      }
+    }
+    return INITIAL_SETTINGS;
   });
 
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
@@ -128,23 +138,23 @@ export default function App() {
 
   // Sync to local storage
   useEffect(() => {
-    localStorage.setItem('snack_bulk_stocks', JSON.stringify(bulkStocks));
+    localStorage.setItem('adimulya_bulk_stocks', JSON.stringify(bulkStocks));
   }, [bulkStocks]);
 
   useEffect(() => {
-    localStorage.setItem('snack_packaged_products', JSON.stringify(packagedProducts));
+    localStorage.setItem('adimulya_packaged_products', JSON.stringify(packagedProducts));
   }, [packagedProducts]);
 
   useEffect(() => {
-    localStorage.setItem('snack_transactions', JSON.stringify(transactions));
+    localStorage.setItem('adimulya_transactions', JSON.stringify(transactions));
   }, [transactions]);
 
   useEffect(() => {
-    localStorage.setItem('snack_repack_history', JSON.stringify(repackHistory));
+    localStorage.setItem('adimulya_repack_history', JSON.stringify(repackHistory));
   }, [repackHistory]);
 
   useEffect(() => {
-    localStorage.setItem('snack_settings', JSON.stringify(settings));
+    localStorage.setItem('adimulya_settings', JSON.stringify(settings));
   }, [settings]);
 
   // Cloud sync simulation

@@ -168,7 +168,7 @@ export const ReceiptModal: React.FC<ReceiptModalProps> = ({
               </div>
               {transaction.customerName && (
                 <div className="flex justify-between">
-                  <span>Meja/Plg:</span>
+                  <span>Pelanggan:</span>
                   <span className="font-bold text-slate-900">{transaction.customerName}</span>
                 </div>
               )}

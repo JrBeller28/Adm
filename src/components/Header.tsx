@@ -134,8 +134,8 @@ export const Header: React.FC<HeaderProps> = ({
     },
     {
       id: 'repack',
-      label: 'Proses Packing Bal',
-      sublabel: 'Pecah ke 10k/5k/500g',
+      label: 'Proses Repack Sak',
+      sublabel: 'Pecah Karung ke Eceran',
       icon: <Layers className="w-4 h-4" />,
       shortcut: 'F2',
       colorScheme: {
@@ -149,7 +149,7 @@ export const Header: React.FC<HeaderProps> = ({
     },
     {
       id: 'stock-bal',
-      label: 'Stok Bal-balan',
+      label: 'Stok Karung & Sak',
       sublabel: 'Gudang Kulakan',
       icon: <PackagePlus className="w-4 h-4" />,
       shortcut: 'F3',
@@ -165,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({
     },
     {
       id: 'stock-packaged',
-      label: 'Stok Kemasan',
+      label: 'Stok Kemasan & Eceran',
       sublabel: 'Siap Jual & Etalase',
       icon: <PackageCheck className="w-4 h-4" />,
       shortcut: 'F4',
@@ -182,7 +182,7 @@ export const Header: React.FC<HeaderProps> = ({
     {
       id: 'reports-daily',
       label: 'Laporan Harian',
-      sublabel: 'Omset per Kemasan',
+      sublabel: 'Omset per Kategori',
       icon: <CalendarDays className="w-4 h-4" />,
       shortcut: 'F5',
       colorScheme: {
@@ -234,8 +234,8 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Brand Logo & Store Info */}
           <div className="flex items-center gap-3">
             <div className="relative group cursor-pointer" onClick={() => setActiveTab('pos')}>
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 text-white flex items-center justify-center font-bold shadow-md shadow-amber-500/25 ring-2 ring-amber-200/60 group-hover:scale-105 transition-transform">
-                <span className="text-2xl drop-shadow-xs">🍿</span>
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-emerald-600 text-white flex items-center justify-center font-bold shadow-md shadow-amber-500/25 ring-2 ring-amber-200/60 group-hover:scale-105 transition-transform">
+                <span className="text-2xl drop-shadow-xs">🌾</span>
               </div>
               <div className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full" />
             </div>
@@ -245,14 +245,14 @@ export const Header: React.FC<HeaderProps> = ({
                 <h1 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight leading-tight">
                   {settings.storeName}
                 </h1>
-                <span className="hidden md:inline-flex items-center gap-1 text-[10px] font-bold tracking-wide uppercase bg-gradient-to-r from-amber-100 to-orange-100 text-amber-900 px-2 py-0.5 rounded-full border border-amber-300/60 shadow-2xs">
-                  <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-                  Sistem Toko Snack
+                <span className="hidden md:inline-flex items-center gap-1 text-[10px] font-bold tracking-wide uppercase bg-gradient-to-r from-amber-100 to-emerald-100 text-emerald-950 px-2 py-0.5 rounded-full border border-emerald-300/60 shadow-2xs">
+                  <Sparkles className="w-2.5 h-2.5 text-emerald-600" />
+                  Sembako & Pakan Ternak
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs text-slate-500">
                 <span className="hidden sm:inline line-clamp-1">
-                  Pusat Kulakan Bal & Kemasan Ritel (10k, 5k, 500g)
+                  Pusat Sembako, Pakan Ternak & Aksesori Terlengkap
                 </span>
                 <span className="hidden sm:inline text-slate-300">•</span>
                 <div className="flex items-center gap-1 font-mono text-[11px] text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded-md">

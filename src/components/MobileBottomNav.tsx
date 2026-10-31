@@ -70,7 +70,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-900">
                   KASIR & PENJUALAN
                 </span>
-                <p className="text-[10px] text-slate-400 font-medium">Pilih kasir POS atau proses packing bal</p>
+                <p className="text-[10px] text-slate-400 font-medium">Pilih kasir POS atau proses repack sak</p>
               </div>
             </div>
             <button 
@@ -127,7 +127,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
               <ChevronRight className={`w-4 h-4 ${activeTab === 'pos' ? 'text-white' : 'text-slate-400'}`} />
             </button>
 
-            {/* 2. Proses Packing Bal */}
+            {/* 2. Proses Repack Sak */}
             <button
               id="mobile-menu-item-repack"
               onClick={() => handleSelectSubmenu('repack')}
@@ -150,7 +150,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 <div>
                   <div className="flex items-center gap-2">
                     <span className={`text-xs font-bold ${activeTab === 'repack' ? 'text-white' : 'text-slate-900'}`}>
-                      Proses Packing Bal
+                      Proses Repack Sak
                     </span>
                     <span
                       className={`text-[9px] font-mono px-1.5 py-0.5 rounded font-bold ${
@@ -163,7 +163,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                     </span>
                   </div>
                   <p className={`text-[11px] ${activeTab === 'repack' ? 'text-slate-300' : 'text-slate-400'}`}>
-                    Konversi Bal Mentah ke Kemasan Siap Jual
+                    Pecah Sak 50kg ke Eceran Siap Jual
                   </p>
                 </div>
               </div>
@@ -224,7 +224,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 <div>
                   <div className="flex items-center gap-2">
                     <span className={`text-xs font-bold ${activeTab === 'stock-bal' ? 'text-white' : 'text-slate-900'}`}>
-                      Stok Bal-balan (Kulakan)
+                      Stok Karung & Sak (Kulakan)
                     </span>
                     <span
                       className={`text-[9px] font-mono px-1.5 py-0.5 rounded font-bold ${
@@ -237,7 +237,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                     </span>
                   </div>
                   <p className={`text-[11px] ${activeTab === 'stock-bal' ? 'text-slate-300' : 'text-slate-400'}`}>
-                    Bahan Baku Kulakan dari Supplier
+                    Kulakan Sembako & Pakan dari Supplier
                   </p>
                 </div>
               </div>

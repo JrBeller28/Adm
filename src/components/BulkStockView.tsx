@@ -45,11 +45,11 @@ export const BulkStockView: React.FC<BulkStockViewProps> = ({
 
   // New bulk form
   const [newName, setNewName] = useState('');
-  const [newCategory, setNewCategory] = useState('Pedas & Gurih');
-  const [newWeightKg, setNewWeightKg] = useState(5);
-  const [newStockBals, setNewStockBals] = useState(5);
-  const [newMinAlert, setNewMinAlert] = useState(3);
-  const [newCost, setNewCost] = useState(130000);
+  const [newCategory, setNewCategory] = useState('Pakan Ternak');
+  const [newWeightKg, setNewWeightKg] = useState(50);
+  const [newStockBals, setNewStockBals] = useState(10);
+  const [newMinAlert, setNewMinAlert] = useState(4);
+  const [newCost, setNewCost] = useState(465000);
   const [newSupplier, setNewSupplier] = useState('');
   const [newNotes, setNewNotes] = useState('');
 
@@ -112,10 +112,10 @@ export const BulkStockView: React.FC<BulkStockViewProps> = ({
             Inventaris & Manajemen Bahan
           </div>
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2 mt-0.5">
-            Stok Bal-balan (Gudang Kulakan) 📦
+            Stok Karung & Sak (Gudang Kulakan) 🌾
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Monitoring bahan baku mentah supplier dan persiapan repacking kemasan ritel.
+            Monitoring kulakan karung beras, pakan ternak sak 50kg, minyak jerigen dan bahan sembako.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export const BulkStockView: React.FC<BulkStockViewProps> = ({
           className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl text-xs sm:text-sm shadow-md shadow-blue-500/25 flex items-center gap-2 transition-all cursor-pointer active:scale-95 self-start sm:self-center"
         >
           <Plus className="w-4 h-4 stroke-[2.5]" />
-          <span>+ Tambah Stok Bal Baru</span>
+          <span>+ Tambah Stok Karung / Sak Baru</span>
         </button>
       </div>
 
@@ -226,7 +226,7 @@ export const BulkStockView: React.FC<BulkStockViewProps> = ({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Cari bahan bal atau supplier..."
+            placeholder="Cari karung/sak pakan, sembako atau supplier..."
             className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200/60 rounded-2xl text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-amber-500 focus:bg-white font-medium text-slate-900 transition-all"
           />
         </div>

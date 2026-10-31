@@ -49,6 +49,48 @@ export function getPackageBadgeInfo(packageType: PackageType): {
   border: string;
 } {
   switch (packageType) {
+    case 'SAK_50KG':
+      return {
+        label: 'Sak / Karung 50kg',
+        bg: 'bg-amber-100/90',
+        text: 'text-amber-950',
+        border: 'border-amber-300/90',
+      };
+    case 'PACK_5KG':
+      return {
+        label: 'Pack / Sak 5kg',
+        bg: 'bg-sky-100/90',
+        text: 'text-sky-950',
+        border: 'border-sky-300/90',
+      };
+    case 'ECERAN_1KG':
+      return {
+        label: 'Eceran 1 Kg',
+        bg: 'bg-emerald-100/90',
+        text: 'text-emerald-950',
+        border: 'border-emerald-300/90',
+      };
+    case 'ECERAN_500G':
+      return {
+        label: 'Eceran 500g',
+        bg: 'bg-teal-100/90',
+        text: 'text-teal-950',
+        border: 'border-teal-300/90',
+      };
+    case 'LITER':
+      return {
+        label: 'Botol / Literan',
+        bg: 'bg-blue-100/90',
+        text: 'text-blue-950',
+        border: 'border-blue-300/90',
+      };
+    case 'PCS':
+      return {
+        label: 'Satuan Pcs / Unit',
+        bg: 'bg-indigo-100/90',
+        text: 'text-indigo-950',
+        border: 'border-indigo-300/90',
+      };
     case 'KEMASAN_10K':
       return {
         label: 'Kemasan 10 Ribu',
@@ -79,7 +121,7 @@ export function getPackageBadgeInfo(packageType: PackageType): {
       };
     case 'BAL':
       return {
-        label: 'Bal Utuh (Grosir)',
+        label: 'Karung / Bal Utuh',
         bg: 'bg-purple-100/90',
         text: 'text-purple-950',
         border: 'border-purple-300/90',

@@ -272,7 +272,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </h1>
             
             <p className="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-              Berikut ringkasan performa penjualan hari ini, pantauan stok kritis etalase dan produk snack terlaris.
+              Berikut ringkasan performa penjualan hari ini, pantauan stok sembako & pakan ternak, dan produk terlaris.
             </p>
           </div>
 
@@ -302,7 +302,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-2xl text-xs sm:text-sm flex items-center gap-2 border border-slate-700 transition-all active:scale-95 cursor-pointer"
             >
               <Layers className="w-4 h-4 text-amber-400" />
-              <span>Packing Bal (F2)</span>
+              <span>Repack Sak (F3)</span>
             </button>
           </div>
         </div>
@@ -320,7 +320,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 Peringatan Stok Menipis ({totalLowStock} Barang Kritis)
               </h4>
               <p className="text-xs text-amber-700 mt-0.5">
-                {lowBulkList.length > 0 && `${lowBulkList.length} bal mentah di gudang `}
+                {lowBulkList.length > 0 && `${lowBulkList.length} karung/sak kulakan di gudang `}
                 {lowBulkList.length > 0 && lowPackagedList.length > 0 && 'dan '}
                 {lowPackagedList.length > 0 && `${lowPackagedList.length} kemasan etalase `}
                 sudah menyentuh batas minimum stok.
@@ -414,7 +414,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
             <div className="mt-2 flex items-center gap-1.5 text-xs text-slate-500">
               <Flame className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-              <span>Top: {topSellingProducts[0]?.name || 'Basreng Pedas'}</span>
+              <span>Top: {topSellingProducts[0]?.name || 'Pakan Ayam BR-1'}</span>
             </div>
           </div>
         </div>
@@ -763,9 +763,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   </div>
                   <div>
                     <span className="text-xs font-bold text-slate-800 group-hover:text-amber-700 block">
-                      Packing Bal ke Kemasan
+                      Repack Sak ke Eceran
                     </span>
-                    <span className="text-[10px] text-slate-400">Pecah bal ke 10k, 5k & 500g</span>
+                    <span className="text-[10px] text-slate-400">Pecah sak 50kg ke 1kg & 5kg</span>
                   </div>
                 </div>
                 <span className="text-[10px] font-mono text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">
@@ -783,9 +783,9 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   </div>
                   <div>
                     <span className="text-xs font-bold text-slate-800 group-hover:text-sky-700 block">
-                      Stok Bal Kulakan
+                      Stok Karung & Sak Kulakan
                     </span>
-                    <span className="text-[10px] text-slate-400">Bahan baku mentah di gudang</span>
+                    <span className="text-[10px] text-slate-400">Kulakan pakan & sembako gudang</span>
                   </div>
                 </div>
                 <span className="text-[10px] font-mono text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">
@@ -817,7 +817,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           <div className="mt-4 pt-3 border-t border-slate-100 text-center">
             <span className="text-[11px] text-slate-400">
-              Versi Sistem Toko Berkah Nusa • 2026
+              Sistem Kasir & Toko ADI MULYA • Sembako, Pakan & Aksesori
             </span>
           </div>
         </div>

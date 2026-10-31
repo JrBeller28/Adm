@@ -1,10 +1,16 @@
 export type PackageType = 
+  | 'SAK_50KG'
+  | 'PACK_5KG'
+  | 'ECERAN_1KG'
+  | 'ECERAN_500G'
+  | 'LITER'
+  | 'PCS'
+  | 'BAL'
+  | 'CUSTOM'
   | 'KEMASAN_10K'
   | 'KEMASAN_5K'
   | 'KEMASAN_500G'
-  | 'KEMASAN_250G'
-  | 'BAL'
-  | 'CUSTOM';
+  | 'KEMASAN_250G';
 
 export interface BulkStockItem {
   id: string;

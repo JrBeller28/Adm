@@ -66,12 +66,18 @@ export const DailyReportView: React.FC<DailyReportViewProps> = ({
     PackageType,
     { label: string; qty: number; revenue: number; profit: number }
   > = {
+    SAK_50KG: { label: 'Sak 50kg Utuh', qty: 0, revenue: 0, profit: 0 },
+    PACK_5KG: { label: 'Pack / Sak 5kg', qty: 0, revenue: 0, profit: 0 },
+    ECERAN_1KG: { label: 'Eceran Kiloan (1kg)', qty: 0, revenue: 0, profit: 0 },
+    ECERAN_500G: { label: 'Eceran 500 Gram', qty: 0, revenue: 0, profit: 0 },
+    LITER: { label: 'Literan / Botol', qty: 0, revenue: 0, profit: 0 },
+    PCS: { label: 'Satuan Pcs / Unit', qty: 0, revenue: 0, profit: 0 },
     KEMASAN_10K: { label: 'Kemasan 10 Ribu', qty: 0, revenue: 0, profit: 0 },
     KEMASAN_5K: { label: 'Kemasan 5 Ribu', qty: 0, revenue: 0, profit: 0 },
     KEMASAN_500G: { label: 'Setengah Kilo (500g)', qty: 0, revenue: 0, profit: 0 },
     KEMASAN_250G: { label: '250 Gram', qty: 0, revenue: 0, profit: 0 },
-    BAL: { label: 'Bal Utuh (Grosir)', qty: 0, revenue: 0, profit: 0 },
-    CUSTOM: { label: 'Menu & Minuman', qty: 0, revenue: 0, profit: 0 },
+    BAL: { label: 'Karung / Bal Utuh', qty: 0, revenue: 0, profit: 0 },
+    CUSTOM: { label: 'Kemasan Khusus', qty: 0, revenue: 0, profit: 0 },
   };
 
   dayTransactions.forEach((trx) => {

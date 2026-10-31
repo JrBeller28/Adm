@@ -87,29 +87,29 @@ export const TopBar: React.FC<TopBarProps> = ({
         };
       case 'repack':
         return {
-          title: 'Proses Packing Bal',
-          desc: 'Konversi bal-balan mentah menjadi kemasan ritel (10k, 5k, 500g)',
+          title: 'Proses Repack Sak & Karung',
+          desc: 'Pecah karung sak 50kg/jerigen ke kemasan eceran (1kg, 5kg, botol)',
           icon: <Layers className="w-5 h-5 text-slate-700 stroke-[2.2]" />,
           badgeStyle: 'bg-slate-100 text-slate-700 border-slate-200',
         };
       case 'stock-bal':
         return {
-          title: 'Stok Bal-balan (Kulakan)',
-          desc: 'Inventaris bahan baku mentah dalam satuan bal dari supplier',
+          title: 'Stok Karung & Sak (Kulakan)',
+          desc: 'Inventaris kulakan karung, pakan sak 50kg & jerigen dari supplier',
           icon: <PackagePlus className="w-5 h-5 text-slate-700 stroke-[2.2]" />,
           badgeStyle: 'bg-slate-100 text-slate-700 border-slate-200',
         };
       case 'stock-packaged':
         return {
-          title: 'Stok Kemasan Siap Jual',
-          desc: 'Monitoring stok kemasan etalase, HPP, margin laba & barcode',
+          title: 'Stok Kemasan & Eceran Siap Jual',
+          desc: 'Monitoring stok sembako, pakan ternak eceran, etalase & aksesoris',
           icon: <PackageCheck className="w-5 h-5 text-slate-700 stroke-[2.2]" />,
           badgeStyle: 'bg-slate-100 text-slate-700 border-slate-200',
         };
       case 'reports-daily':
         return {
           title: 'Laporan Penjualan Harian',
-          desc: 'Rincian omset dan laba detail per jenis kemasan & riwayat nota',
+          desc: 'Rincian omset dan laba detail per produk sembako, pakan & nota',
           icon: <CalendarDays className="w-5 h-5 text-slate-700 stroke-[2.2]" />,
           badgeStyle: 'bg-slate-100 text-slate-700 border-slate-200',
         };
@@ -123,14 +123,14 @@ export const TopBar: React.FC<TopBarProps> = ({
       case 'labels':
         return {
           title: 'Cetak Label Barcode',
-          desc: 'Pembuatan dan pencetakan stiker barcode untuk kemasan plastik',
+          desc: 'Pembuatan dan pencetakan stiker barcode untuk kemasan plastik & sak',
           icon: <Barcode className="w-5 h-5 text-slate-700 stroke-[2.2]" />,
           badgeStyle: 'bg-slate-100 text-slate-700 border-slate-200',
         };
       default:
         return {
           title: settings.storeName,
-          desc: 'Sistem Operasional Toko Snack Berkah Nusa',
+          desc: 'Sistem Operasional Toko ADI MULYA - Sembako, Pakan Ternak & Aksesoris',
           icon: <Sparkles className="w-5 h-5 text-slate-700 stroke-[2.2]" />,
           badgeStyle: 'bg-slate-100 text-slate-700 border-slate-200',
         };

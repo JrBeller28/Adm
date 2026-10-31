@@ -125,8 +125,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         },
         {
           id: 'repack',
-          label: 'Proses Packing Bal',
-          sublabel: 'Pecah ke 10k / 5k / 500g',
+          label: 'Proses Repack Sak',
+          sublabel: 'Pecah Karung ke Eceran',
           icon: <Layers className="w-5 h-5 stroke-[2.2]" />,
           shortcut: 'F3',
           color: {
@@ -147,8 +147,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
       items: [
         {
           id: 'stock-bal',
-          label: 'Stok Bal-balan',
-          sublabel: 'Barang Kulakan',
+          label: 'Stok Karung & Sak',
+          sublabel: 'Kulakan Gudang',
           icon: <PackagePlus className="w-5 h-5 stroke-[2.2]" />,
           shortcut: 'F4',
           badgeCount: lowBulkCount,
@@ -289,7 +289,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 </div>
                 <div className="text-[10px] text-amber-500 font-bold uppercase tracking-wider flex items-center gap-1">
                   <Sparkles className="w-2.5 h-2.5 text-amber-500" />
-                  <span>Sistem Toko Snack</span>
+                  <span>Sembako & Pakan Ternak</span>
                 </div>
               </div>
             )}

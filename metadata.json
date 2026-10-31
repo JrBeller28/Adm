@@ -1,6 +1,6 @@
 {
-  "name": "Sistem Manajemen Toko Snack",
-  "description": "Aplikasi manajemen stok bal-balan, repacking otomatis ke aneka kemasan, kasir POS barcode & QRIS, cetak struk, serta analitik penjualan.",
+  "name": "ADI MULYA - Sembako, Pakan Ternak & Aksesoris",
+  "description": "Sistem kasir POS dan manajemen stok Toko ADI MULYA: sembako, pakan ternak (ayam, bebek, lele, burung), perlengkapan peternakan, repack karung ke eceran, barcode dan cetak struk.",
   "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

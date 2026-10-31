@@ -131,10 +131,10 @@ export const RepackView: React.FC<RepackViewProps> = ({
             Operasional Gudang
           </div>
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2 mt-0.5">
-            Proses Packing Bal (Pecah ke Aneka Kemasan) 📦
+            Proses Repack Sak & Karung (Pecah ke Eceran) 🌾
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Konversi otomatis: memotong stok bal-balan mentah dan instan menambah persediaan kemasan siap jual di Kasir POS.
+            Konversi otomatis: memotong stok karung/sak 50kg mentah dan instan menambah persediaan kemasan 1kg, 5kg atau botol di Kasir POS.
           </p>
         </div>
 
