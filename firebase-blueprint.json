@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "BulkStockItem": {
+      "title": "BulkStockItem",
+      "description": "Inventory of bulk items (bal-balan)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "weightPerBalKg": { "type": "number" },
+        "stockBals": { "type": "number" },
+        "minStockBalAlert": { "type": "number" },
+        "costPerBal": { "type": "number" },
+        "supplier": { "type": "string" },
+        "lastRestockDate": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "name", "stockBals"]
+    },
+    "PackagedProduct": {
+      "title": "PackagedProduct",
+      "description": "Inventory of packaged products ready for sale",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "bulkStockId": { "type": "string" },
+        "name": { "type": "string" },
+        "snackName": { "type": "string" },
+        "packageType": { "type": "string" },
+        "packageLabel": { "type": "string" },
+        "weightGram": { "type": "number" },
+        "stockPacks": { "type": "number" },
+        "minStockAlert": { "type": "number" },
+        "costPrice": { "type": "number" },
+        "sellingPrice": { "type": "number" },
+        "barcode": { "type": "string" },
+        "colorTag": { "type": "string" },
+        "category": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["id", "name", "stockPacks"]
+    },
+    "StoreSettings": {
+      "title": "StoreSettings",
+      "description": "Global store settings",
+      "type": "object",
+      "properties": {
+        "storeName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "footerMessage": { "type": "string" },
+        "autoPrintReceipt": { "type": "boolean" },
+        "qrisMerchantName": { "type": "string" },
+        "qrisNmid": { "type": "string" },
+        "cloudSyncEnabled": { "type": "boolean" },
+        "lastCloudSyncTimestamp": { "type": "string" },
+        "receiptPaperSize": { "type": "string", "enum": ["58mm", "80mm"] }
+      }
+    }
+  },
+  "firestore": {
+    "bulkStocks/{id}": {
+      "schema": { "$ref": "#/entities/BulkStockItem" },
+      "description": "Bulk stock inventory collection"
+    },
+    "packagedProducts/{id}": {
+      "schema": { "$ref": "#/entities/PackagedProduct" },
+      "description": "Packaged products inventory collection"
+    },
+    "storeSettings/{id}": {
+      "schema": { "$ref": "#/entities/StoreSettings" },
+      "description": "Settings for the store"
+    }
+  }
+}

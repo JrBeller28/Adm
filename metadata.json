@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Manajemen Toko Snack",
+  "description": "Aplikasi manajemen stok bal-balan, repacking otomatis ke aneka kemasan, kasir POS barcode & QRIS, cetak struk, serta analitik penjualan.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,60 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Validation for StoreSettings
+    function isValidStoreSettings(data) {
+      return data.keys().hasOnly(['storeName', 'tagline', 'address', 'phone', 'footerMessage', 'autoPrintReceipt', 'qrisMerchantName', 'qrisNmid', 'cloudSyncEnabled', 'lastCloudSyncTimestamp', 'receiptPaperSize']) &&
+             data.storeName is string && data.storeName.size() <= 100 &&
+             data.autoPrintReceipt is bool;
+    }
+
+    match /storeSettings/{settingId} {
+      allow read: if true; // Public configuration for the app
+      allow create, update: if isSignedIn() && isValidId(settingId) && isValidStoreSettings(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(settingId);
+    }
+
+    // Validation for BulkStockItem
+    function isValidBulkStockItem(data) {
+      return data.keys().hasOnly(['id', 'name', 'category', 'weightPerBalKg', 'stockBals', 'minStockBalAlert', 'costPerBal', 'supplier', 'lastRestockDate', 'notes']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() <= 200 &&
+             data.stockBals is number;
+    }
+
+    match /bulkStocks/{stockId} {
+      allow read: if true;
+      allow create, update: if isSignedIn() && isValidId(stockId) && isValidBulkStockItem(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(stockId);
+    }
+
+    // Validation for PackagedProduct
+    function isValidPackagedProduct(data) {
+      return data.keys().hasOnly(['id', 'bulkStockId', 'name', 'snackName', 'packageType', 'packageLabel', 'weightGram', 'stockPacks', 'minStockAlert', 'costPrice', 'sellingPrice', 'barcode', 'colorTag', 'category', 'imageUrl']) &&
+             data.id is string && data.id.size() <= 128 &&
+             data.name is string && data.name.size() <= 200 &&
+             data.stockPacks is number;
+    }
+
+    match /packagedProducts/{productId} {
+      allow read: if true;
+      allow create, update: if isSignedIn() && isValidId(productId) && isValidPackagedProduct(request.resource.data);
+      allow delete: if isSignedIn() && isValidId(productId);
+    }
+  }
+}
